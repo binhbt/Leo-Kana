@@ -1,0 +1,7 @@
+include ':app'
+include ':vegarequest'
+project(':vegarequest').projectDir = new File('E:\\Android Base\\android-base\\AndroidBaseDemo\\vegarequest')
+include ':vegabase'
+project(':vegabase').projectDir = new File('E:\\Android Base\\android-base\\AndroidBaseDemo\\vegabase')
+include ':VegaRecyclerView'
+project(':VegaRecyclerView').projectDir = new File('E:\\Android Base\\android-base\\AndroidBaseDemo\\VegaRecyclerView')
