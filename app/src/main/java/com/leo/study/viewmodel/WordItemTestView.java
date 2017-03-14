@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.leo.study.Const;
 import com.leo.study.R;
@@ -46,6 +47,18 @@ public class WordItemTestView   extends VegaDataBinder<Word> {
             @Override
             public void onClick(View view) {
                 holder1.sendEvent(new NotifyEvent(data, NotifyEvent.Type.WORD_TEST_SELECTED));
+            }
+        });
+        holder1.item.setOnLongClickListener(new View.OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View v) {
+                String txt = data.getMean1();
+                if (data.getOption() == TestOption.ENVI){
+                    txt = data.getMean2() + " - "+ data.getMean3();
+                }
+                Toast.makeText(holder1.item.getContext(), txt, Toast.LENGTH_LONG).show();
+                return true;
             }
         });
     }
